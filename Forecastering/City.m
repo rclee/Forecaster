@@ -64,7 +64,7 @@
 
 
 
-- (NSString *)title //built in method being overwritten for MKAnnotation
+- (NSString *)title 
 {
     return self.name;
 }
@@ -83,7 +83,7 @@
 {
     MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:self.coordinate addressDictionary:nil];
     MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
-    mapItem.name = self.name; // user comment 11
+    mapItem.name = self.name;
     
     return mapItem;
 }
@@ -96,7 +96,7 @@
 #define kLongitudeKey @"longitude"
 
 
-- (void)encodeWithCoder:(NSCoder *)aCoder //NSCoding protocol RCL: HW
+- (void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:self.name forKey:kNameKey];
     [aCoder encodeObject:self.zipCode forKey:kZipCodeKey];

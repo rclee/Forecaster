@@ -85,23 +85,15 @@
     return locationArray.count;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ForecastCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ForecastedCell" forIndexPath:indexPath];
     
     City *items = locationArray[indexPath.row];
     
-//    [items saveObject];
-    
     cell.labelCurrentCity.text = items.name;
     cell.labelCurrentState.text = items.state;
-    
-    
     cell.labelCurrentTemp.text = [items.currentWeather currentTemperature];
-//    NSLog(@"%d labelCurrentTemp",items.objectTemp);
-    
-    
     
     return cell;
 }
@@ -162,7 +154,6 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"SegueForecastModalView"])

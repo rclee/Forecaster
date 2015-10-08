@@ -19,7 +19,8 @@
 
 @implementation CityWeatherViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     self.title = self.aCity.name;
     self.iconImageView.image = [UIImage imageNamed:self.aCity.currentWeather.icon];
@@ -31,13 +32,12 @@
     self.labelChanceOfRain.text = [self.aCity.currentWeather chanceOfRain];
     self.labelHumidity.text = [self.aCity.currentWeather humidityPercentage];
     
-    // Do any additional setup after loading the view.
     [self configureMapView];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)configureMapView
@@ -64,7 +64,7 @@
         }
         
         annotationView.canShowCallout = YES;
-        return annotationView; //return is the last thing you do in a method
+        return annotationView;
     }
     return nil;
 }

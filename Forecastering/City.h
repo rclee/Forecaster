@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "Weather.h"
 
-@import MapKit; //imports a framework - in every class you want to use it in
+@import MapKit;
 
-@interface City : NSObject <MKAnnotation, NSCoding> //implementing the protocol - works similar to a delegate - acting as an MKAnnotation object
+@interface City : NSObject <MKAnnotation, NSCoding> 
 
 @property (strong, nonatomic) Weather *currentWeather;
 @property (strong, nonatomic) NSArray *forecastedWeather;
